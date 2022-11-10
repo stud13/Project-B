@@ -53,6 +53,6 @@ setInterval(function () {
 }, 1000 / 60);
 
 // Запуск сервера
-server.listen(80, function () {
+server.listen(3000, function () {
     console.log(`Api running on port 3000`);
 });

@@ -15,6 +15,10 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'))
 });
 
+app.get('/Main', function (req, res) {
+    res.sendfile(path.join(__dirname, 'src/Menu/game.html'))
+});
+
 /*io.on("connection", (socket) => {
     socket.emit("hello", "world")
 });*/

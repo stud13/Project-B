@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Наша многопользовательская игра</title>
-    <style>
-        canvas {
-            width: 800px;
-            height: 600px;
-            border: 5px solid black;
-        }
-    </style>
-    <script src="/socket.io/socket.io.js"></script>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>BomberMan</title>
+  <link href="src/Menu/MainPage.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<canvas id="canvas"></canvas>
+
+<div class="main_menu_block">
+  <div class="main_menu_block_width">
+    <div class="main_title">
+      <b class="main_title_text">B<img alt="o" class="main_logo" src="Icon/ka.png">mber<b class="main_title_item">&</b>Man</b>
+    </div>
+
+    <div class="main_delimiter"></div>
+
+    <div
+            class="main_button"
+            onclick="window.open('../../', '_self');"
+            title="Играть новым персонажем"
+    >Новая игра
+    </div>
+
+    <div
+            class="main_button"
+            onclick="advancedBlockOpen(this, true, AdvancedBlockActionSid.SAVE_PLAY);"
+            title="Продолжить игру существующим персонажем"
+    >Загрузить игру
+    </div>
+
+    <div
+            class="main_button"
+            onclick="advancedBlockOpen(this, false, AdvancedBlockActionSid.MAP_PLAY);"
+            title="Пройти карту существующим персонажем"
+    >Загрузить карту
+    </div>
+
+    <div
+            class="main_button"
+            onclick="advancedBlockOpen(this, false, AdvancedBlockActionSid.MAP_EDIT);"
+            title="Создать или редактировать карту"
+    >Редактор карт
+    </div>
+  </div>
+</div>
+
+<div class="main_menu_advanced_block">
+  <input class="main_menu_advanced_block_left" type="hidden">
+
+  <div style="margin: 10px; text-align: center;">
+    <img
+            alt="Create"
+            class="main_advanced_block_add_button"
+            onclick="window.open('../Editor/EditorPage.html', '_self');"
+            src="Icon/icon14.png"
+            title="Создать новую карту"
+    >
+
+    <b class="main_title_text">Выберите</b>
+
+    <img
+            alt="Cancel"
+            class="main_advanced_block_cancel_button"
+            onclick="advancedBlockClose();"
+            src="Icon/icon3.png"
+            title="Отменить"
+    >
+  </div>
+
+  <hr class="main_advanced_delimiter"/>
+</div>
+
+<script src="../../jquery-3.6.0.min.js"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
+<script src="src/Menu/MainPage.js" type="text/javascript"></script>
+
 </body>
-<script src="static/game.js"></script>
 </html>

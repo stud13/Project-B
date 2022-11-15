@@ -4,6 +4,11 @@ class AdvancedBlockActionSid {
     static MAP_EDIT = 3;
 }
 
+if (window.jQuery) {
+    // jQuery подключен к странице
+    alert("yup");
+}
+
 function advancedBlockOpen(o_button, is_left = false, id_action) {
     var jq_button = $(o_button);
     if (jq_button.hasClass('button_disabled'))

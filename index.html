@@ -9,8 +9,8 @@
 
 <body>
 
-<div class="main_menu_block">
-  <div class="main_menu_block_width">
+<div class="main_menu_block" id="main_menu_block">
+  <div class="main_menu_block_width" id="main_menu_block_width">
     <div class="main_title">
       <b class="main_title_text">B<img alt="o" class="main_logo" src="static/Icon/ka.png">mber<b
               class="main_title_item">&</b>Man</b>
@@ -27,59 +27,53 @@
 
     <div
             class="main_button"
-            onclick="advancedBlockOpen(this, true, AdvancedBlockActionSid.SAVE_PLAY);"
+            onclick="sideWindow(this, AdvancedBlockActionSid.SAVED_PLAY)"
             title="Продолжить игру существующим персонажем"
     >Загрузить игру
     </div>
 
     <div
             class="main_button"
-            onclick="advancedBlockOpen(this, false, AdvancedBlockActionSid.MAP_PLAY);"
+            onclick="sideWindow(this, AdvancedBlockActionSid.MAP_PLAY);"
             title="Пройти карту существующим персонажем"
     >Загрузить карту
     </div>
 
     <div
             class="main_button"
-            onclick="advancedBlockOpen(this, false, AdvancedBlockActionSid.MAP_EDIT);"
+            onclick="sideWindow(this, AdvancedBlockActionSid.MAP_EDIT);"
             title="Создать или редактировать карту"
     >Редактор карт
     </div>
   </div>
-</div>
+  <div class="main_menu_advanced_block" id="main_menu_advanced_block">
+    <input class="main_menu_advanced_block_left" type="hidden">
 
-<div class="main_menu_advanced_block">
-  <input class="main_menu_advanced_block_left" type="hidden">
+    <div style="margin: 10px; text-align: center;">
+      <img
+              alt="Create"
+              class="main_advanced_block_add_button"
+              id="main_advanced_block_add_button"
+              onclick="window.open('../Editor/EditorPage.html', '_self');"
+              src="static/Icon/icon14.png"
+              title="Создать новую карту"
+      >
 
-  <div style="margin: 10px; text-align: center;">
-    <img
-            alt="Create"
-            class="main_advanced_block_add_button"
-            onclick="window.open('../Editor/EditorPage.html', '_self');"
-            src="static/Icon/icon14.png"
-            title="Создать новую карту"
-    >
+      <b class="main_title_text" id="main_title_text"></b>
 
-    <b class="main_title_text">Выберите</b>
+      <img
+              alt="Cancel"
+              class="main_advanced_block_cancel_button"
+              onclick="closeWindow();"
+              src="static/Icon/icon3.png"
+              title="Отменить"
+      >
+    </div>
 
-    <img
-            alt="Cancel"
-            class="main_advanced_block_cancel_button"
-            onclick="advancedBlockClose();"
-            src="static/Icon/icon3.png"
-            title="Отменить"
-    >
+    <hr class="main_advanced_delimiter"/>
   </div>
-
-  <hr class="main_advanced_delimiter"/>
 </div>
 
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/jquery-ui/dist/jquery-ui.js"></script>
-<!--<script src="../../jquery-3.6.0.min.js"></script>
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
-<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>-->
 
 <script src="static/MainPage.js" type="text/javascript"></script>
 
